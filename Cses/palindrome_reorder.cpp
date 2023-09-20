@@ -12,7 +12,7 @@ int main(){
 	for(char&e:s) a[e-'A']++;
 	int cnt=0;
 	for(int i=0;i<=26;i++){
-		if(a[i]==1){
+		if(a[i]&1){
 			cnt++;
 			add=(char)(i+'A');
 		}
