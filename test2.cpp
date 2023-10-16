@@ -24,11 +24,11 @@ int main(){
 	memset(a,'.',sizeof(a));
 	for(int i=0;i<w/n+1;i++){
 		for(int j=0;j<w/n+1;j++){
-			draw(i*k+j, i+j*k);
+			draw((i+1)*k-j, i+j*k);
 		}
 	}
-	for(int i=k+1;i<(l+2)*k+1;i++){
-		for(int j=k+1;j<=w+k;j++){
+	for(int i=k-1;i<(l+2)*k-1;i++){
+		for(int j=k;j<w+k;j++){
 			cout << a[i][j];
 		}
 		cout << "\n";
