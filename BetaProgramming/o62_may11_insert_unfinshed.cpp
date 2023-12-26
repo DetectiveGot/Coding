@@ -39,20 +39,9 @@ int main(){
 		if(b[i]<0) ans=max(ans, s+b[i]-b[i+1]+qs[sz]-qs[i+1]);
 		s+=b[i];
 	}
+	s+=b[sz];
 	ans=max(ans, s);
-//	deb(sz) << endl;
-//	cout << endl;
-//	for(int i=1;i<=sz;i++) cout << b[i] << " "; cout << endl;
-//	for(int i=1;i<=z;i++) cout << qs[i] << " "; cout << endl;
 	cout << ans;
-	
 	
 	return 0;
 }
-/*
-11
-3-2+7+1-3+5-7+7-9+8+6
-
-11
-3 - 2 + 7 + 1 - 3 + 5 - 7 + 7 - 9 + 8 + 6
-*/
