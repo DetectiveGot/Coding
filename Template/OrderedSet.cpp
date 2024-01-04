@@ -3,7 +3,7 @@
 #include <ext/pb_ds/tree_policy.hpp> 
 #define ll long long
 #define pii pair<int,int>
-#define deb(x) cerr << "[" << #x << ":" << x << "] "
+#define deb(x) cerr << "[" << #x << ": " << x << "] "
 
 using namespace std;
 using namespace __gnu_pbds;
