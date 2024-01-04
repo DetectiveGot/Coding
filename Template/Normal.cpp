@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 #define ll long long
 #define pii pair<int,int>
-#define deb(x) cerr << "[" << #x << ":" << x << "] "
+#define deb(x) cerr << "[" << #x << ": " << x << "] "
 
 using namespace std;
 
