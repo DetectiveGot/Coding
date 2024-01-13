@@ -6,30 +6,19 @@
 
 using namespace std;
 
-unordered_set<pdb> s;
-
 int main(){
 	cin.tie(nullptr)->sync_with_stdio(0);
 	int n; cin >> n;
 	vector<pdb> v(n);
-	bool _0=true,_1=true,_3=true;
-	int ans=0;
 	for(auto &e:v) cin >> e.first;
 	for(auto &e:v) cin >> e.second;
-	for(auto &e:v) s.insert(e);
-	auto cal = [](double a, double b){
-		return (b.second-a.second)/(b.first-a.first);	
-	};
-	double m=(v[1].second-v[0].second)/(v[1].first-v[0].first);
-	for(int i=1;i<n;i++){
-		if(v[i-1].second!=v[i].second) _0=false;
-		else if(cal(v[i], v[i-1])!=m) _1=false;
-		else if(!s.count(make_pair(-v[i].first, v[i].second))) _3=false;
-	}
-	if(_0) cout << 0;
-	else if(_1) cout << 1;
-	else if(_3) cout << 3;
-	else if()
+	double d=log10(v[0].second)/log10(v[1].first);
+	cout << floor(d);
 	
 	return 0;
 }
+/*
+20
+35 40 20 30 25 15 85 10 70 50 90 5 75 80 55 60 0 95 45 65
+216.32 245.12 161.14 184.22 171.5 99.43 430.55 68.0 350.79 253.92 445.55 80.83 365.9 389.95 270.78 315.44 31.02 502.06 235.17 326.09
+*/
