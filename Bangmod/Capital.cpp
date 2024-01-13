@@ -29,7 +29,7 @@ int main(){
 	dfs(1, -1);
 	int ans=0;
 	for(int i=1;i<=n;i++) ans=max(ans, dist[i]);
-	cout << ans;W
+	cout << ans;
 	
 	return 0;
 }
