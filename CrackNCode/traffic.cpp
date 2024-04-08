@@ -13,11 +13,29 @@ struct DATA{
 		return dx>dt.dx;
 	}
 };
-struct A{
+struct DATA{
 	int v,w,f;
 };
-vector<A> g[N];
+vector<DATA> g[N];
 priority_queue<DATA> pq;
+
+int cal(int st,int w,int f){
+    bool red=(st/f)&1;
+    int res=st;
+    int cur=st;
+    if(red){
+        res+=f-(res%f);
+    }
+    int rem=f-(res%f);
+    if(rem>=w)return res+w;
+    res+=rem;
+    cur+=rem;
+    w-=rem;
+    int dist=w;
+    res+=dist;
+    res+=f*(dist/f)+f;
+    return res;
+}
 
 int main(){
 	ios::sync_with_stdio(0); cin.tie(0);
@@ -37,8 +55,9 @@ int main(){
 		if(vis[ux]) continue;
 		vis[ux]=1;
 		for(auto&e:g[ux]){
-			if(!vis[e.v] && dist[e.v]>dx+e.w+(e.w/e.f)*e.f){
-				dist[e.v]=e.w+dx+(e.w/e.f)*e.f;
+			int dis=cal(dx, e.w, e.f);
+			if(!vis[e.v] && dist[e.v]>dis){
+				dist[e.v]=dis;
 				pq.push({e.v, dist[e.v]});
 			}
 		}
