@@ -3,6 +3,8 @@
 #include <ext/pb_ds/tree_policy.hpp> 
 #define ll long long
 #define pii pair<int,int>
+#define tpi tuple<int,int,int>
+#define siz(x) (int)(x.size())
 #define deb(x) cerr << "[" << #x << ": " << x << "] "
 
 using namespace std;
